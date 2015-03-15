@@ -1,0 +1,22 @@
+<h1>Listing GoodJobs</h1> 
+
+<%= form_for Job.new do |f| %>
+  <%= f.text_field :name %>
+  <%= f.text_field :message %>
+  <%= f.submit "GJを追加" %>
+<% end %>
+
+<% if @incomplete_jobs.empty? && @complete_jobs.empty? %>
+  <p>Currently no GJs. Add one above.</p>
+<% else %>
+  <h2>未完了のGJ</h2>
+  <div class="jobs" id="incomplete_jobs">
+    <%= render @incomplete_jobs %>
+  </div>
+
+  <h2>完了したGJ</h2>
+  <div class="jobs" id="complete_jobs">
+    <%= render @complete_jobs %>
+  </div>
+<% end %>
+

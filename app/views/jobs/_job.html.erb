@@ -1,0 +1,6 @@
+<%= form_for job, remote: true do |f| %>
+  <%= f.check_box :complete %>
+  <%= f.label :complete, job.name %>
+  <%= link_to "(削除)", job, method: :delete, data: {confirm: "Are you sure?"}, remote: true %>
+<% end %>
+

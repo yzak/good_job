@@ -1,0 +1,6 @@
+<% if @job.complete? %>
+  $('#edit_job<%= @job.id %>').appendTo('#complete_jobs');
+<% else %>
+  $('#edit_job<%= @job.id %>').appendTo('#incomplete_jobs');
+<% end %>
+
